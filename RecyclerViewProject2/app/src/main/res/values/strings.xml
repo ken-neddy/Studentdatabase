@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerViewProject2</string>
+    <string name="input_your_password">input_your_password</string>
+    <string name="log_in">log_in</string>
+    <string name="no_account_yet_sign_up">no_account_yet_sign_up</string>
+    <string name="sign_up">sign_up</string>
+    <string name="welcome_user">welcome_user</string>
+</resources>
