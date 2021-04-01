@@ -1,10 +1,8 @@
 package com.neddycode.recyclerviewproject2;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +16,15 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder{
         public ImageView mImageView;
-        public TextView mTextView1;
-        public TextView mTextView2;
+        public TextView transactionIdTv;
+        public TextView balanceTv;
 
 
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.ImageView);
-            mTextView1 = itemView.findViewById(R.id.textView1);
-            mTextView2 = itemView.findViewById(R.id.textView2);
+            transactionIdTv = itemView.findViewById(R.id.transactionIdTv);
+            balanceTv = itemView.findViewById(R.id.balanceTv);
         }
     }
 
@@ -37,18 +35,16 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     @NonNull
     @Override
     public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.example_item,parent, false);
-        ExampleViewHolder evh = new ExampleViewHolder(v);
-        return evh;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_example_item,parent, false);
+        return new ExampleViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
         ExampleItem currentItem = mExampleList.get(position);
 
-        holder.mImageView.setImageResource(currentItem.getImageResource());
-        holder.mTextView1.setText(currentItem.getText1());
-        holder.mTextView2.setText(currentItem.getText2());
+        holder.transactionIdTv.setText(currentItem.getTransactionId());
+        holder.balanceTv.setText(currentItem.getBalance());
 
     }
 

@@ -1,50 +1,97 @@
 package com.neddycode.recyclerviewproject2;
 
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
 
-import android.os.Bundle;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    // creating variables for recycler view
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<ExampleItem> exampleList;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<ExampleItem> exampleList = new ArrayList<>();
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "AMN73Y69C", "$64875"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "AG3CHRUHC", "$83633"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24,"AST62ZTBC" ,"$28852"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "AAMDJA9SC", "$88243"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "AAMD6E37C", "$58559"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24,"AKVQEFG2C" ,"$95483"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "A86G3YDGC", "$83793"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "ADPKDNMDC", "$56575"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24,"AEXPVGSHC" ,"$36994"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "ARNU7QS4C", "$88853"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "APFZ786MC", "$34565"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24,"AN78HBFQC" ,"$84564"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "AQVNUX7WC", "$78632"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "ABTJ3VP9C", "$28697"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24,"AS2VR29EC" ,"$95652"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "AEBAFJPEC", "$76443"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24, "APCPVCX8C", "$93692"));
-        exampleList.add(new ExampleItem(R.drawable.ic_baseline_attach_money_24,"AJBBTD48C" ,"$56576"));
-
+        // initializing our views.
+        exampleList = new ArrayList<>();
 
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // adding our array list to our recycler view adapter class.
         mAdapter = new ExampleAdapter(exampleList);
 
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        // setting adapter to our recycler view.
         mRecyclerView.setAdapter(mAdapter);
+
+        // prepareRecyclerView();
+
+        // calling a method to get the data from database.
+        getDataFromServer();
+
     }
+
+    private void getDataFromServer() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("trial");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> object, ParseException e) {
+                // in done method checking if the error is null or not.
+                if (e == null) {
+                    // Adding objects into the Array
+                    // if error is not null we are getting data from
+                    // our object and passing it to our array list.
+                    for (int i = 0; i < object.size(); i++) {
+                        // extracting data and adding it to array list
+                        // ParseObject balance = object.get(Integer.parseInt("balance"));
+
+                        //Extracting the balance of the current object in the list
+                        //int bal = object.get(i).getInt("balance");
+                        String credit = object.get(i).getString("credit");
+                       String debit = object.get(i).getString("debit");
+                        String balanceString = String.valueOf(credit);
+                       String balance2String = String.valueOf(debit);
+
+                        String objectId = object.get(i).getObjectId();
+
+                        // on below line we are adding data to our array list.
+                        exampleList.add(new ExampleItem(balanceString, objectId));
+                        Log.d("ParseTing", "New data added to the arrayList" + "balance: " + balanceString  + " objectId: " + objectId + " debit " +  balance2String);
+
+                        // notifying adapter class on adding new data.
+                        mAdapter.notifyDataSetChanged();
+                    }
+
+                } else {
+                    // handling error if we get any error.
+                    Toast.makeText(MainActivity.this, "Fail to get data..", Toast.LENGTH_SHORT).show();
+                    Log.d("ParseTing", "Error getting data from Parse: ", e);
+                }
+            }
+        });
+    }
+
 }

@@ -1,7 +1,5 @@
 package com.neddycode.recyclerviewproject2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
     private ImageView loginAvatar;
@@ -35,22 +40,39 @@ public class Login extends AppCompatActivity {
         noAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                openActivity();
+                openSignUpActivity();
             }
+        });
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String emailValue = editTextTextEmailAddress.getText().toString();
+                String passwordValue = editTextTextPassword2.getText().toString();
 
-
+                ParseUser.logInInBackground(emailValue, passwordValue, new LogInCallback() {
+                    @Override
+                    public void done(ParseUser user, ParseException e) {
+                        if (user != null) {
+                            //The user logged in
+                            openActivity();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Sign in error", Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    }
+                });
+            }
         });
     }
-    private void openActivity () {
-        Intent intent = new Intent(this, SignUp.class);
+
+    private void openActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
-
-
-
     }
 
-
+    private void openSignUpActivity() {
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+    }
 }

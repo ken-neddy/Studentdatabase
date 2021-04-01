@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7F61D8"
+    android:background="@color/design_default_color_primary"
     tools:layout_editor_absoluteY="25dp">
 
 
@@ -49,11 +49,13 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="25dp"
         android:elevation="3dp"
+        app:backgroundTint="#FF2D34C5"
         android:text="@string/sign_up"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <TextView
         android:id="@+id/textView"
