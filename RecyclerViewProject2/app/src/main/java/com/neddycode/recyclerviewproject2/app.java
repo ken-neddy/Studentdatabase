@@ -6,6 +6,8 @@ import com.parse.Parse;
 
 public class app extends Application {
 
+
+    //keys to access the parse server
     @Override
     public void onCreate() {
         super.onCreate();

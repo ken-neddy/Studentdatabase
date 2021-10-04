@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@color/design_default_color_primary">
+    android:background="@color/black">
+
     <ImageView
         android:id="@+id/loginavatar"
         android:layout_width="wrap_content"
@@ -18,8 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -39,7 +39,7 @@
         android:singleLine="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColorHint="#D83E76"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
         android:ems="10"
         android:hint="@string/Input_your_password"
         android:inputType="textPassword"
-        android:textColorHint="@color/white"
+        android:textColorHint="#D83E76"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="UnknownId"
-        app:backgroundTint="#2D34C5"/>
+        app:backgroundTint="#D83E76"/>
 
     <Button
         android:id="@+id/noAccount"
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:ems="10"
-        app:backgroundTint="#FF2D34C5"
+        app:backgroundTint="#D83E76"
         android:background="@null"
         android:text="no account yet? sign up"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -16,6 +16,7 @@ import com.parse.ParseUser;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
+    //declaring variables
     private ImageView loginAvatar;
     private EditText editTextTextEmailAddress;
     private EditText editTextTextPassword2;
@@ -27,8 +28,8 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //initializing views
         setContentView(R.layout.activity_login);
-
         loginAvatar = findViewById(R.id.loginavatar);
         editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);
         editTextTextPassword2 = findViewById(R.id.editTextTextPassword2);
@@ -37,6 +38,8 @@ public class Login extends AppCompatActivity {
         forgotPassword = findViewById(R.id.forgotPassword);
 
 
+
+        //Implementation of Sign up button to open sign up activity
         noAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,18 +47,22 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
+        //implementation of log in functionality
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String emailValue = editTextTextEmailAddress.getText().toString();
                 String passwordValue = editTextTextPassword2.getText().toString();
 
+                //Asking the server to allow log in for a registered account.
                 ParseUser.logInInBackground(emailValue, passwordValue, new LogInCallback() {
                     @Override
                     public void done(ParseUser user, ParseException e) {
                         if (user != null) {
                             //The user logged in
                             openActivity();
+                            //Incase of an error
                         } else {
                             Toast.makeText(getApplicationContext(), "Sign in error", Toast.LENGTH_LONG)
                                     .show();

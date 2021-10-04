@@ -12,6 +12,7 @@
     app:contentPadding="2dp"
     >
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +23,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="2dp"
-            android:src="@drawable/ic_baseline_attach_money_24" />
+            android:src="@drawable/ic_baseline_attach_money_24"
+            android:contentDescription="@string/todo" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -31,21 +33,65 @@
             android:layout_margin="5dp"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction ID :"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/transactionIdTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="4dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credit :"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/teal_200" />
             <TextView
-                android:id="@+id/transactionIdTv"
+                android:id="@+id/balanceTv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Line 1"
-                android:textColor="@android:color/holo_blue_light"
-                android:textSize="20sp" />
+                android:text="@string/line3"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/teal_200"
+                android:layout_marginLeft="3dp"/>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Debit :"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#F47272" />
             <TextView
                 android:id="@+id/balanceTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Line2"
+                android:text="@string/line2"
                 android:layout_marginTop="5dp"
-                android:textColor="@android:color/holo_blue_bright" />
+                android:textColor="#F47272"
+                android:layout_marginLeft="3dp"/>
+            </LinearLayout>
+
+
         </LinearLayout>
 
 

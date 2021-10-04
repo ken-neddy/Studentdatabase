@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecyclerView Project</string>
+    <string name="app_name">Transactions</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -11,4 +11,14 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="input_your_email">input your email</string>
+    <string name="input_your_password">Input your password</string>
+    <string name="log_in">LOG IN</string>
+    <string name="no_account_yet_sign_up">No account yet? sign up</string>
+    <string name="todo">TODO</string>
+    <string name="Input_your_email" />
+    <string name="welcome">Welcome</string>
+    <string name="sign_up">Sign up</string>
+    <string name="welcome_user">welcome user</string>
+    <string name="input_your_email2">Input_your_email</string>
 </resources>

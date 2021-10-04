@@ -11,4 +11,8 @@
     <string name="back4app_client_key" translatable="false">ljVq2EJgKVVXW3stmtdQmLjuslmSrWFb84OOYN7E </string>
     <string name="account_balance">Account balance</string>
     <string name="colon">:</string>
+    <string name="todo">TODO</string>
+    <string name="line_1">Line 1</string>
+    <string name="line2">Line2</string>
+    <string name="line3">line3</string>
 </resources>
