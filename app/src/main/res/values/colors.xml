@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- suluhu colors -->
+
+	<color name="colorPrimary">#008577</color>
+	<color name="colorPrimaryDark">#00574B</color>
+	<color name="colorAccent">#D81B60</color>
+	<color name="_bg__splash_screen_ek2_color">#F0F4F3</color>
+	<color name="ellipse_1_color">#B4F3C6</color>
+	<color name="_10_50_color">#000000</color>
+	<color name="rectangle_1_color">#C3ECCF</color>
+	<color name="report_emergency_color">#FFFFFF</color>
+</resources>

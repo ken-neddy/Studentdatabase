@@ -1,0 +1,135 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fillViewport="true">
+
+	               <androidx.constraintlayout.widget.ConstraintLayout
+					   android:layout_width="match_parent"
+					   android:layout_height="wrap_content"
+					   >
+
+					   <Button
+						   android:id="@+id/take_a_pic"
+						   android:layout_width="51dp"
+						   android:layout_height="49dp"
+						   android:layout_marginStart="68dp"
+						   android:layout_marginTop="52dp"
+						   android:background="#C0F4C9"
+						   android:text="@string/take_a_pic_ek1_string"
+						   android:textAllCaps="false"
+						   app:layout_constraintBottom_toBottomOf="parent"
+						   app:layout_constraintEnd_toStartOf="@+id/add_doc"
+						   app:layout_constraintHorizontal_bias="0.0"
+						   app:layout_constraintStart_toStartOf="parent"
+						   app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2"
+						   app:layout_constraintVertical_bias="0.47" />
+
+					   <Button
+						   android:id="@+id/add_doc"
+						   android:layout_width="51dp"
+						   android:layout_height="49dp"
+						   android:layout_marginTop="40dp"
+						   android:layout_marginEnd="60dp"
+						   android:background="#C0F4C9"
+						   android:text="@string/add_doc"
+						   android:textAllCaps="false"
+						   app:layout_constraintBottom_toBottomOf="parent"
+						   app:layout_constraintEnd_toStartOf="@+id/add_vid"
+						   app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+
+
+					   <Button
+						   android:id="@+id/add_vid"
+						   android:layout_width="51dp"
+						   android:layout_height="49dp"
+						   android:layout_marginTop="68dp"
+						   android:layout_marginEnd="56dp"
+						   android:background="#C0F4C9"
+						   android:text="@string/add_vid"
+						   android:textAllCaps="false"
+						   app:layout_constraintBottom_toBottomOf="parent"
+						   app:layout_constraintEnd_toEndOf="parent"
+						   app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2"
+						   app:layout_constraintVertical_bias="0.421" />
+
+					   <TextView
+						   android:id="@+id/welcome__ek2"
+						   android:layout_width="100dp"
+						   android:layout_height="29.5dp"
+						   android:layout_marginStart="70dp"
+						   android:layout_marginTop="48dp"
+						   android:layout_marginEnd="10dp"
+						   android:text="@string/welcome__ek2_string"
+						   android:textColor="@color/_10_50_color"
+						   android:textSize="20sp"
+						   android:textStyle="bold"
+						   app:layout_constraintEnd_toEndOf="parent"
+						   app:layout_constraintHorizontal_bias="1.0"
+						   app:layout_constraintStart_toEndOf="@+id/ellipse_2_ek1"
+						   app:layout_constraintTop_toTopOf="parent" />
+
+					   <View
+						   android:id="@+id/ellipse_1_ek1"
+						   android:layout_width="200dp"
+						   android:layout_height="200dp"
+						   android:alpha="0.40999999642372"
+						   android:background="@drawable/ellipse_1_ek1_shape"
+						   app:layout_constraintEnd_toStartOf="@id/textView"
+						   app:layout_constraintHorizontal_bias="0.0"
+						   app:layout_constraintStart_toStartOf="parent"
+						   app:layout_constraintTop_toTopOf="parent"
+						   app:layout_constraintRight_toLeftOf="@id/ellipse_2_ek1"
+						   android:layout_marginStart="-67dp"
+						   android:layout_marginTop="-30dp"
+						   app:layout_constraintVertical_bias="0.0" />
+
+
+					   <View
+						   android:id="@+id/ellipse_2_ek1"
+						   android:layout_width="200dp"
+						   android:layout_height="200dp"
+						   android:layout_marginStart="-70dp"
+						   android:layout_marginTop="-90dp"
+						   android:alpha="0.40999999642372"
+						   android:background="@drawable/ellipse_1_ek1_shape"
+						   app:layout_constraintEnd_toEndOf="parent"
+						   app:layout_constraintHorizontal_bias="0.563"
+						   app:layout_constraintStart_toStartOf="@+id/ellipse_1_ek1"
+						   app:layout_constraintTop_toTopOf="parent" />
+
+					   <TextView
+						   android:id="@+id/textView"
+						   android:layout_width="wrap_content"
+						   android:layout_height="wrap_content"
+						   android:fontFamily="sans-serif-condensed-medium"
+						   android:text="@string/this_report_page_is_completely_anonymous"
+						   android:textSize="17sp"
+						   android:background="@color/rectangle_1_color"
+						   android:textStyle="bold"
+						   app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
+						   app:layout_constraintEnd_toEndOf="parent"
+						   app:layout_constraintStart_toStartOf="parent"
+						   app:layout_constraintTop_toBottomOf="@+id/ellipse_2_ek1" />
+
+					   <EditText
+						   android:id="@+id/editTextTextMultiLine2"
+						   android:layout_width="352dp"
+						   android:layout_height="152dp"
+						   android:layout_marginBottom="288dp"
+						   android:ems="10"
+						   android:gravity="start|top"
+						   android:hint="@string/briefly_explain_the_emergency_ek1_string"
+						   android:inputType="textMultiLine"
+						   app:layout_constraintBottom_toBottomOf="parent"
+						   app:layout_constraintEnd_toEndOf="parent"
+						   app:layout_constraintHorizontal_bias="0.491"
+						   app:layout_constraintStart_toStartOf="parent"
+						   android:autofillHints="none" />
+
+				   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

@@ -1,0 +1,166 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<View
+		android:id="@+id/_bg__registration_ek2"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:background="@drawable/_bg__registration_ek2_shape"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.0" />
+
+	<EditText
+		android:id="@+id/enter_your_phone_number"
+		android:layout_width="361dp"
+		android:layout_height="51dp"
+		android:layout_marginBottom="40dp"
+		android:ems="10"
+		android:hint="enter your mobile number"
+		android:inputType="phone"
+		app:layout_constraintBottom_toTopOf="@+id/enter_your_ID_number"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.406"
+		app:layout_constraintStart_toStartOf="@+id/_bg__registration_ek2" />
+
+	<EditText
+		android:id="@+id/enter_your_username"
+		android:layout_width="361dp"
+		android:layout_height="51dp"
+		android:layout_marginBottom="120dp"
+		android:ems="10"
+		android:hint="@string/enter_your_full_names"
+		android:inputType="textPersonName"
+		app:layout_constraintBottom_toTopOf="@+id/enter_your_ID_number"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.343"
+		app:layout_constraintStart_toStartOf="@+id/_bg__registration_ek2" />
+
+	<View
+		android:id="@+id/ellipse_1_ek1"
+		android:layout_width="200dp"
+		android:layout_height="200dp"
+		android:layout_marginStart="-67dp"
+		android:layout_marginTop="-30dp"
+		android:alpha="0.40999999642372"
+		android:background="@drawable/ellipse_1_ek1_shape"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.003"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<View
+		android:id="@+id/ellipse_2_ek1"
+		android:layout_width="200dp"
+		android:layout_height="200dp"
+		android:layout_marginStart="-67dp"
+		android:layout_marginTop="-90dp"
+		android:alpha="0.40999999642372"
+		android:background="@drawable/ellipse_1_ek1_shape"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.563"
+		app:layout_constraintStart_toStartOf="@+id/ellipse_1_ek1"
+		app:layout_constraintTop_toTopOf="parent" />
+
+
+	<TextView
+		android:id="@+id/let_s_get_started"
+		android:layout_width="105dp"
+		android:layout_height="29dp"
+		android:layout_marginTop="140dp"
+		android:text="@string/let_s_get_started_string"
+		android:textColor="@color/_10_50_color"
+		android:textSize="13sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toTopOf="@+id/enter_your_username"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/_bg__registration_ek2"
+		app:layout_constraintVertical_bias="0.0" />
+
+	<Button
+		android:id="@+id/sign_up"
+		android:layout_width="352dp"
+		android:layout_height="59dp"
+		android:layout_marginBottom="28dp"
+		android:background="#C0F4C9"
+		android:text="@string/sign_up_ek1_string"
+		android:textAllCaps="false"
+		app:layout_constraintBottom_toTopOf="@+id/already_registered__sign_in"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+	</Button>
+
+	<TextView
+		android:id="@+id/already_registered__sign_in"
+		android:layout_width="190dp"
+		android:layout_height="29.5dp"
+		android:layout_marginBottom="16dp"
+		android:background="@color/_bg__splash_screen_ek2_color"
+		android:text="@string/already_registered__sign_in_string"
+		android:textAllCaps="false"
+		android:textColor="@color/_10_50_color"
+		android:textSize="13sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.064"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<EditText
+		android:id="@+id/enter_your_ID_number"
+		android:layout_width="361dp"
+		android:layout_height="51dp"
+		android:layout_marginBottom="44dp"
+		android:ems="10"
+		android:hint="enter your identification number"
+		android:inputType="number"
+		app:layout_constraintBottom_toTopOf="@+id/enter_your_email_reg"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.406"
+		app:layout_constraintStart_toStartOf="@+id/_bg__registration_ek2" />
+
+	<EditText
+		android:id="@+id/enter_your_email_reg"
+		android:layout_width="361dp"
+		android:layout_height="51dp"
+		android:layout_marginBottom="44dp"
+		android:ems="10"
+		android:hint="@string/enter_your_email"
+		android:inputType="textEmailAddress"
+		app:layout_constraintBottom_toTopOf="@+id/enter_password_reg"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/_bg__registration_ek2" />
+
+	<EditText
+		android:id="@+id/enter_password_reg"
+		android:layout_width="361dp"
+		android:layout_height="51dp"
+		android:layout_marginBottom="44dp"
+		android:ems="10"
+		android:hint="Enter your Password"
+		android:inputType="textPassword"
+		app:layout_constraintBottom_toTopOf="@+id/sign_up"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.406"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<ProgressBar
+		android:id="@+id/progressBar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
